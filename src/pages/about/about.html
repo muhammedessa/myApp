@@ -1,11 +1,40 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      About
+      Add Person
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
 
+    <ion-list>
+
+  <ion-item>
+    <ion-label floating>First name</ion-label>
+    <ion-input type="text" [(ngModel)]="name"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label floating>Last name</ion-label>
+    <ion-input type="text" [(ngModel)]="lname"></ion-input>
+  </ion-item>
+   <ion-item>
+    <ion-label floating>Age</ion-label>
+    <ion-input type="text" [(ngModel)]="age"></ion-input>
+  </ion-item>
+   <ion-item>
+    <ion-label floating>Department</ion-label>
+    <ion-input type="text" [(ngModel)]="dept"></ion-input>
+  </ion-item>
+        
+   <ion-item>
+     
+   <button ion-button large color="danger" (click)="createPerson(name,lname,age,dept)">
+        <ion-icon name="ios-add-circle"></ion-icon>
+         Add</button>
+  </ion-item>
+</ion-list>
+    
+    
+    
 </ion-content>

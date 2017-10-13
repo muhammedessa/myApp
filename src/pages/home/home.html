@@ -1,17 +1,48 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>Home</ion-title>
+    <ion-title>Persons Database!</ion-title>
+     <ion-buttons end>
+      <button ion-button icon-only (click)="gotoProfile()">
+         <ion-icon ios="ios-person" md="md-person"></ion-icon>
+      </button>
+    </ion-buttons>
+
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  <h2>Welcome to Ionic!</h2>
-  <p>
-    This starter project comes with simple tabs-based layout for apps
-    that are going to primarily use a Tabbed UI.
-  </p>
-  <p>
-    Take a look at the <code>src/pages/</code> directory to add or change tabs,
-    update any existing page or create new pages.
-  </p>
+  <h2>Welcome to Persons Database!</h2>
+ 
+ 
+    
+    <ion-list>
+  <ion-item-sliding *ngFor="let person of persons | async">
+    <ion-item>
+      <ion-thumbnail item-start>
+           <img src="assets/img/person.png">
+       
+      </ion-thumbnail>
+            
+         <h2>   {{person.name}}</h2>
+        <p>last name :  {{person.lname}} -
+       age :   {{person.age}}  -
+         department :  {{person.dept}} </p>
+        <ion-note>
+         User ID : {{person.$key}}
+      </ion-note>
+    </ion-item>
+    <ion-item-options side="right">
+      <button ion-button color="primary" (click)="editPerson(person.$key,person.name,person.lname,person.age,person.dept)">
+         <ion-icon ios="ios-create" md="md-create"></ion-icon>
+        Edit
+      </button>
+      <button ion-button color="danger" (click)="deletePerson(person.$key)">
+        <ion-icon ios="ios-trash" md="md-trash"></ion-icon>
+        Delete
+      </button>
+    </ion-item-options>
+     
+  </ion-item-sliding>
+</ion-list>
+
 </ion-content>

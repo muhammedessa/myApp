@@ -1,17 +1,42 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      Contact
+      Login
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content>
   <ion-list>
-    <ion-list-header>Follow us on Twitter</ion-list-header>
+      
+     <ion-item>
+        <ion-icon ios="logo-facebook" md="logo-facebook"></ion-icon>
+     <button ion-button round (click)="logInFacebook()">Login by Facebook</button>
+    </ion-item>
+      
+           <ion-item>
+      <ion-icon ios="logo-googleplus" md="logo-googleplus"></ion-icon>
+     <button ion-button round (click)="logInGoogle()">Login by Google</button>
+    </ion-item>
+      
+           <ion-item>
+  <ion-icon ios="logo-twitter" md="logo-twitter"></ion-icon>
+     <button ion-button round (click)="logInTwitter()">Login by Twitter</button>
+    </ion-item>
+      
+     
     <ion-item>
-      <ion-icon name="ionic" item-left></ion-icon>
-      @ionicframework
+       <ion-icon ios="ios-log-in" md="md-log-in"></ion-icon>
+     <button ion-button round (click)="logIn()">Login by Email</button>
+    </ion-item>
+      <ion-item>
+     <ion-icon ios="ios-person-add" md="md-person-add"  color="secondary"></ion-icon>
+     <button ion-button round  color="secondary"  (click)="register()">Register</button>
+    </ion-item>
+      
+        <ion-item>
+         <ion-icon ios="ios-log-out" md="md-log-out" color="danger" ></ion-icon>
+     <button ion-button round color="danger"  (click)="logOut()">Logout</button>
     </ion-item>
   </ion-list>
 </ion-content>
